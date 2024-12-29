@@ -62,7 +62,7 @@ const Contact = () => {
                 <div>
                   <div className="font-medium">Location</div>
                   <div className="text-gray-600">
-                    <p>Oakville, Canada 🇨🇦 </p>
+                    <p>Toronto, Canada 🇨🇦 </p>
                     <p>New Delhi, India 🇮🇳</p>
                   </div>
                 </div>
