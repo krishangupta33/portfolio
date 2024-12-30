@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, FileDown } from 'lucide-react';
+import { ArrowRight, FileDown, Code } from 'lucide-react';
 import { motion } from 'framer-motion';
 import KrishanImage from '../assets/Krishan_Gupta.jpg';
 import ResumeFile from '../assets/KrishanGupta_Resume.pdf';
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <motion.div 
-            className="text-center md:text-left w-full"
+            className="text-center md:text-left w-full md:w-1/2"
             variants={itemVariants}
           >
             <motion.h1 
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
             </motion.p>
 
             <motion.div 
-              className="flex gap-4 justify-center md:justify-start"
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
               variants={itemVariants}
             >
               <motion.a
@@ -82,11 +82,19 @@ const Hero: React.FC = () => {
               >
                 <FileDown className="mr-2" /> Resume
               </motion.button>
+              <motion.a
+                href="#projects"
+                className="px-6 py-3 border border-gray-300 text-gray-700 rounded-full hover:bg-gray-100 transition duration-300 flex items-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Code className="mr-2" /> Projects
+              </motion.a>
             </motion.div>
           </motion.div>
           
           <motion.div 
-            className="flex-1 flex justify-center"
+            className="hidden md:flex flex-1 justify-center"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ 
