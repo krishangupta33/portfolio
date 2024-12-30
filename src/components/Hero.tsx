@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
   return (
     <motion.section 
       id="home" 
-      className="min-h-screen flex items-center pt-16 bg-gradient-to-b from-white to-gray-50"
+      className="min-h-screen flex items-center pt-24 bg-gradient-to-b from-white to-gray-50"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -45,18 +45,18 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <motion.div 
-            className="flex-1 text-center md:text-left"
+            className="text-center md:text-left w-full"
             variants={itemVariants}
           >
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight"
               variants={itemVariants}
             >
               Hi, I'm <span className="gradient-text">Krishan Gupta</span>
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0"
               variants={itemVariants}
             >
               A passionate Data Scientist crafting innovative solutions through AI and Machine Learning
@@ -68,27 +68,19 @@ const Hero: React.FC = () => {
             >
               <motion.a
                 href="#contact"
-                className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2 text-lg"
+                className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Let's talk <ArrowRight size={20} />
               </motion.a>
-              <motion.a
-                href="#projects"
-                className="px-8 py-4 border-2 border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors text-lg"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View Projects
-              </motion.a>
               <motion.button
                 onClick={handleResumeDownload}
-                className="px-8 py-4 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2 text-lg"
+                className="px-6 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition duration-300 flex items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Resume <FileDown size={20} />
+                <FileDown className="mr-2" /> Resume
               </motion.button>
             </motion.div>
           </motion.div>

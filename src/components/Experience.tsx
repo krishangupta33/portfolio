@@ -96,53 +96,45 @@ const Experience: React.FC = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Professional Experience</h2>
         
-        <div className="relative">
+        <div className="relative pl-4 md:pl-12">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-blue-500 h-full hidden md:block"></div>
+          <div className="absolute left-0 md:left-8 transform w-1 bg-blue-500 h-full"></div>
           
           {experiences.map((exp, index) => (
             <div 
               key={index} 
-              className={`flex items-center w-full ${
-                index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
-              } mb-12`}
+              className="relative mb-12 pl-8 md:pl-16"
             >
               {/* Timeline Dot */}
-              <div className="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-blue-500 text-white">
-                <Briefcase size={16} />
+              <div className="absolute left-0 md:left-8 top-0 w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
+                <Briefcase size={16} className="text-white" />
               </div>
               
               {/* Experience Card */}
               <div 
-                className={`w-full md:w-1/2 ${
-                  index % 2 === 0 ? 'md:pl-8 text-right' : 'md:pr-8 text-left'
-                }`}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+                onClick={() => toggleExpand(index)}
               >
-                <div 
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-                  onClick={() => toggleExpand(index)}
-                >
-                  <div className="flex justify-between items-center mb-3">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800">{exp.title}</h3>
-                      <p className="text-gray-600">{exp.company} | {exp.location}</p>
-                      <p className="text-sm text-gray-500">{exp.duration}</p>
-                    </div>
-                    <div className="text-blue-500">
-                      {expandedIndex === index ? <ChevronUp /> : <ChevronDown />}
-                    </div>
+                <div className="flex justify-between items-center mb-3">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800">{exp.title}</h3>
+                    <p className="text-gray-600">{exp.company} | {exp.location}</p>
+                    <p className="text-sm text-gray-500">{exp.duration}</p>
                   </div>
-
-                  {expandedIndex === index && (
-                    <div className="mt-4 pt-4 border-t border-gray-200">
-                      <ul className="list-disc list-inside text-gray-700 space-y-2">
-                        {exp.description.map((item, idx) => (
-                          <li key={idx} className="text-sm">{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  <div className="text-blue-500">
+                    {expandedIndex === index ? <ChevronUp /> : <ChevronDown />}
+                  </div>
                 </div>
+
+                {expandedIndex === index && (
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <ul className="list-disc list-inside text-gray-700 space-y-2">
+                      {exp.description.map((item, idx) => (
+                        <li key={idx} className="text-sm">{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           ))}
