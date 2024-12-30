@@ -1,24 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-white">
+      <div className="flex flex-col min-h-screen">
         <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-        </Routes>
-        <footer className="bg-gray-900 text-white py-8">
-          <div className="container mx-auto px-4 text-center">
-            <p>&copy; {new Date().getFullYear()} Krishan Gupta. All rights reserved.</p>
-          </div>
-        </footer>
+        <main className="flex-grow pt-20">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   );
-}
+};
 
 export default App;
