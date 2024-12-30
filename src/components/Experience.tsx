@@ -5,8 +5,9 @@ const experiences = [
   {
     title: "Data Scientist",
     company: "Canadian Tire Financial Services (Canadian Tire Bank)",
-    location: "",
+    location: "Oakville, 🇨🇦",
     duration: "Sep 2024 – Present",
+    logo: "/ct bank.png",
     description: [
       'Facilitated the bank\'s transition from SAS-based credit scoring models to Python-based Scorecard models, significantly reducing the model development time and expediting the training process for scorecard models.',
       'Identified the causes of performance degradation in a credit scoring model developed in 2017 and successfully refactored the scores, ensuring the model\'s deviation from the benchmark fell within acceptable limits.'
@@ -15,8 +16,9 @@ const experiences = [
   {
     title: "Graduate Research Assistant (Data Science)",
     company: "McGill University",
-    location: "",
+    location: "Montreal, 🇨🇦",
     duration: "Feb 2024 – Aug 2024",
+    logo: "/mcgill.png",
     description: [
       'Developed and deployed a computer vision model using the Gemini API for animal identification in the Amazon rainforest, integrated with Google Cloud via CI/CD pipelines for storing output in Big Query database.',
       'Implemented ETL processes to handle data transformation and loading, ensuring efficient data flow from image captures to model input.'
@@ -25,8 +27,9 @@ const experiences = [
   {
     title: "Data Scientist",
     company: "Proctor & Gamble",
-    location: "",
+    location: "Montreal, 🇨🇦",
     duration: "Sep 2023 – May 2024",
+    logo: "/pg.png",
     description: [
       'Performed regression analysis on historical marketing campaigns to optimize budget allocation for maximizing ROAS (Return on Ad Spend), leading to estimated annual savings of over 200,000 CAD.',
       'Trained and deployed a LightGBM Model in Databricks using model serving features and MLOps techniques to predict customer trade-up paths, resulting in a 10% increase in revenue per customer by increasing customer engagement.'
@@ -35,8 +38,9 @@ const experiences = [
   {
     title: "Data Scientist",
     company: "Protium Finance",
-    location: "",
+    location: "Bengaluru, 🇮🇳",
     duration: "Dec 2022 – July 2023",
+    logo: "/protium.png",
     description: [
       'Applied clustering algorithms for customer analytics and segment customer risk profiles, expanding the customer base by 60%. Developed a Business Intelligence dashboard in PowerBI to identify delinquent customers, reducing EMI bounce rates by 20%.',
       'Analyzed text data to compare thousands of credit score reports from different credit bureaus, resulting in a 30% cost saving by selecting a cost-effective bureau and enhancing business performance.'
@@ -45,8 +49,9 @@ const experiences = [
   {
     title: "Data Analyst",
     company: "Udaan Capital",
-    location: "Bengaluru, India",
+    location: "Bengaluru, 🇮🇳",
     duration: "Aug 2022 – Dec 2022",
+    logo: "/udaan.png",
     description: [
       'Employed SQL and Python to enact Reserve Bank of India\'s compulsory NPA guidelines, contributing to the seamless operation of business activities.',
       'Built an Asset Liability Management Dashboard to keep track of future flow of funds leveraging Google Sheets and data flow automation.'
@@ -55,8 +60,9 @@ const experiences = [
   {
     title: "Data Analyst",
     company: "Freshok",
-    location: "Gurugram, India",
+    location: "Gurugram, 🇮🇳",
     duration: "Jan 2022 – May 2022",
+    logo: "/freshok.png",
     description: [
       'Created dashboards of product-level P&L, Gross Margins, and Inventory on Redash using SQL and BigQuery.',
       'Analyzed past year\'s pricing data of fruits and vegetables in Advanced Excel and PowerBI to conclude a business decision of investing 110,000 CAD.'
@@ -65,18 +71,20 @@ const experiences = [
   {
     title: "Co-Founder",
     company: "Kramofire Manufacturer and Trader Pvt Ltd",
-    location: "Delhi, India",
+    location: "Delhi, 🇮🇳",
     duration: "Jun 2019 – Jan 2022",
+    logo: "/kramofire.png",
     description: [
       'Developed a pricing model based on inventory and demand, resulting in a 25% increase in gross profit.',
       'Optimized inventory turnover with a demand forecasting model, reducing capital requirements by 10%.'
     ]
   },
   {
-    title: "Mechanical Engineer (Research & Development)",
+    title: "Mechanical Engineer",
     company: "Tata Motors",
-    location: "Pune, India",
+    location: "Pune, 🇮🇳",
     duration: "Aug 2018 – May 2019",
+    logo: "/tata.png",
     description: [
       'Developed new test rigs for the testing of Electric Vehicle transmissions.',
       'Upgraded old test rigs and saved 80% in capital expenditure costs.'
@@ -116,10 +124,17 @@ const Experience: React.FC = () => {
                 onClick={() => toggleExpand(index)}
               >
                 <div className="flex justify-between items-center mb-3">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-800">{exp.title}</h3>
-                    <p className="text-gray-600">{exp.company} | {exp.location}</p>
-                    <p className="text-sm text-gray-500">{exp.duration}</p>
+                  <div className="flex items-center space-x-4">
+                    <img 
+                      src={exp.logo} 
+                      alt={`${exp.company} logo`} 
+                      className="w-12 h-12 object-contain rounded-full"
+                    />
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-800">{exp.title}</h3>
+                      <p className="text-gray-600">{exp.company} | {exp.location}</p>
+                      <p className="text-sm text-gray-500">{exp.duration}</p>
+                    </div>
                   </div>
                   <div className="text-blue-500">
                     {expandedIndex === index ? <ChevronUp /> : <ChevronDown />}
