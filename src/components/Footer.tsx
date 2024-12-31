@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4 text-white">Connect</h4>
             <div className="flex space-x-4 items-center">
               <a 
-                href="https://github.com/krishangupta" 
+                href="https://github.com/krishangupta33" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-blue-600 transition"
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://www.linkedin.com/in/krishangupta/" 
+                href="https://www.linkedin.com/in/krishangupta33/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-blue-600 transition"
